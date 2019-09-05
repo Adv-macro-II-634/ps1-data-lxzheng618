@@ -1,0 +1,25 @@
+#import wealth data
+wealth<-read.table("D:/2019 fall macro data/wealth.txt")
+w<-wealth[,1]
+
+#quantile
+quantile(w,seq(0.1,1,0.1))
+cvw = sd(w)/mean(w)
+cvw
+
+#Variance of logs
+
+
+#Gini index
+ineq(w)
+
+#Top1%/Lowest 40%
+w1<-sort(w)
+w2<-w[order(-w)]
+x1<-function(w1,n){sum(head(w1,n))}
+x2<-function(w2,n){sum(head(w2,n))}
+x1(w1,8834)
+x2(w2,2209)
+
+#mean
+mean(w1)
